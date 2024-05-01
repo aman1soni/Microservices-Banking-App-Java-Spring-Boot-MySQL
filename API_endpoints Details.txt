@@ -1,0 +1,43 @@
+How to start microservices - Exctract all files and run the applications from their main() method. first start, e-server application project and then start all one-by-one.
+
+for centralized configuration - you need to add all the files from (config-files folder) commit in the any folder of git repository. (files can be both .properties and .yml format)
+
+<---------------------------------------------------------------------------------------------------->
+
+API endpoints :
+
+	1. for getting all customer details : http://localhost:8999/customer/all (GET)
+	2. for adding the new customer details : http://localhost:8999/customer/add (GET)
+	3. for adding the one customer details by customerId : http://localhost:8999/customer/113 (POST)
+	4. for update the customer by customer object : http://localhost:8999/customer/update (POST)
+	5. for getting customer with their account details by Id : http://localhost:8999/customer/account/113 (GET)
+	6. for delete the customer along with his account : http://localhost:8999/customer/delete/113 (GET)
+	7. for adding money in account with amount-demo object : http://localhost:8999/customer/account/add-money (POST)
+	8. for withdraw money from account with amount-demo object : http://localhost:8999/customer/account/withdraw-money (POST)
+	9. for deleting the account by customerId : http://localhost:8999/account/delete/113 (GET)
+	10. for getting account details by customerId : http://localhost:8999/account/customer/113 (GET)
+
+<---------------------------------------------------------------------------------------------------->
+
+Add customer-demo object :
+{
+        "customerId": 114,
+        "customerName": "Varun CHANDRASHEKHAR soni",
+        "fatherName": "Shyam",
+        "customerDob": "22-DEC",
+        "phone": "2312312",
+        "address": "Üdaipur"
+}
+
+<---------------------------------------------------------------------------------------------------->
+
+Add amount-demo object:
+{
+    "amount":220.55,
+    "customerId":113,
+    "accountNumber":123
+}
+
+<---------------------------------------------------------------------------------------------------->
+
+Developed by Aman soni (aman.soni@nagarro.com)

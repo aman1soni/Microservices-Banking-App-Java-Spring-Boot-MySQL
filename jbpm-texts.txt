@@ -1,0 +1,41 @@
+jbpm (jboss java business process mgmt) is automates business processes and decisions.
+
+KIE server ->
+set of processes/decision services will be deployed on KIE SERVER. KIE server uses database server to store the process services.
+
+Business central jbpm UI-->
+GUI to model business process, guided rules etc.
+It combines many tools into one configurable solution and allows to create, deploy, execute and monitor.
+
+When you use the business central UT to deploy services/process on the KIE server., KIE server receives the request through the 
+
+
+1. jbpm workout
+2. Topic pe message  rece/sent - demo
+
+<property name="jboss.as.management.blocking.timeout" value="2400"/>
+
+<datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
+                    <driver>h2</driver>
+                    <security>
+                        <user-name>sa</user-name>
+                        <password>sa</password>
+                    </security>
+                </datasource>
+                <xa-datasource jndi-name="java:jboss/datasources/jBPMDS" pool-name="jBPMXADS" enabled="true">
+                    <xa-datasource-property name="URL">
+                        jdbc:h2:file:${jboss.server.data.dir}/jbpm-db;MVCC=TRUE
+                    </xa-datasource-property>
+                    <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    <driver>h2</driver>
+                    <security>
+                        <user-name>sa</user-name>
+                        <password>sa</password>
+                    </security>
+                </xa-datasource>
+                <drivers>
+                    <driver name="h2" module="com.h2database.h2">
+                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    </driver>
+                </drivers>
